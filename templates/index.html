@@ -2,6 +2,47 @@
 <html>
 <head>
     <title>Peluquería - Reservar Turno</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            /* Imagen de fondo */
+            background: url('{{ url_for('static', filename='fondo.jpg') }}') no-repeat center center fixed;
+            background-size: contain; /* Cambiado de cover a contain */
+            background-repeat: repeat; /* Hace que la imagen se repita si no cubre todo */
+            position: relative;
+        }
+        /* Overlay oscuro */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 0;
+        }
+        /* Contenido por encima del overlay */
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
+        /* Centrar títulos */
+        h1 {
+            color: #fff;
+            text-align: center;
+        }
+        label, input, button {
+            color: #fff;
+        }
+        form {
+            background: rgba(0,0,0,0.3);
+            padding: 1em;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 1em auto;
+        }
+    </style>
 </head>
 <body>
     <h1>Reservar Turno</h1>
@@ -11,12 +52,5 @@
         Hora: <input type="time" name="hora" required><br>
         <button type="submit">Reservar</button>
     </form>
-
-    <h2>Turnos Reservados</h2>
-    <ul>
-        {% for t in turnos %}
-            <li>{{ t[1] }} - {{ t[2] }} a las {{ t[3] }}</li>
-        {% endfor %}
-    </ul>
 </body>
 </html>
