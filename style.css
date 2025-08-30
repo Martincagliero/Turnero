@@ -1,3 +1,11 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Peluquería - Reservar Turno</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Si quieres, elimina el bloque <style> de aquí -->
+</head>
+
 input, select, textarea {
     color: #fff;
     background: rgba(0,0,0,0.5); /* Fondo oscuro y semitransparente */

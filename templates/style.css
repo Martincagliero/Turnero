@@ -1,7 +1,0 @@
-input, select, textarea {
-    color: #fff;
-    background: rgba(0,0,0,0.5); /* Fondo oscuro y semitransparente */
-    border: 1px solid #fff;
-    padding: 0.5em;
-    border-radius: 5px;
-}
